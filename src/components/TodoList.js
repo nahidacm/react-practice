@@ -14,7 +14,7 @@ const TodoList = (props) => {
                 {
                 props.todos.map( 
                     (todo) => {
-                        return <li key={todo.key} onClick={()=>handleTodoClick(todo.key)}>{todo.text}</li>
+                        return <li key={todo.key} onClick={()=>handleTodoClick(todo.key)} style={(todo.complete) ? {textDecoration: 'line-through'} : {}}>{todo.text}</li>
                     }
                 )
                 }
