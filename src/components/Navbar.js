@@ -1,47 +1,17 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom'
-import Counter from './Counter'
-import Todo from './Todo'
-import Home from './Home'
+import {Link} from 'react-router-dom'
 
 function Navbar() {
     return (
-        <div>
-            <Router>
-                <div>
-                    <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/todo">Todo</Link>
-                    </li>
-                    <li>
-                        <Link to="/counter">Counter</Link>
-                    </li>
-                    </ul>
-
-                    <hr />
-
-                    <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/todo">
-                        <Todo />
-                    </Route>
-                    <Route path="/counter">
-                        <Counter />
-                    </Route>
-                    </Switch>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                <Link className="nav-link active" to="/">Home <span className="sr-only">(current)</span></Link>
+                <Link className="nav-link" to="/todo">Todo</Link>
+                <Link className="nav-link" to="/counter">Counter</Link>
                 </div>
-            </Router>            
-        </div>
+            </div>
+        </nav>
     )
 }
 
