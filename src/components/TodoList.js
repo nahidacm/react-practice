@@ -10,11 +10,11 @@ const TodoList = (props) => {
 
     return (
         <div>
-            <ul>
+            <ul className="list-group">
                 {
                 props.todos.map( 
                     (todo) => {
-                        return <li key={todo.key} onClick={()=>handleTodoClick(todo.key)} style={(todo.complete) ? {textDecoration: 'line-through'} : {}}>{todo.text}</li>
+                        return <li className="list-group-item" key={todo.key} onClick={()=>handleTodoClick(todo.key)} style={(todo.complete) ? {textDecoration: 'line-through'} : {}}>{todo.text}</li>
                     }
                 )
                 }
